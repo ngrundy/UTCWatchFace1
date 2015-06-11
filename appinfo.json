@@ -1,0 +1,23 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "nick@grundy.id.au",
+    "longName": "UTC Watch Face 1",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "UTCWatchFace1",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "0ef93253-36b4-4a1a-8088-8bb759e28ddc",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
