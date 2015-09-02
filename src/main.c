@@ -90,7 +90,7 @@ static void update_time() {
 	// Display Day
 	strftime(daybuffer, sizeof("Wednesday"), "%A", tick_time);
 	// Display Month / Day
-	strftime(datebuffer, sizeof("December 00"), "%B %d", tick_time);
+	strftime(datebuffer, sizeof("September 00"), "%B %d", tick_time);
 	
   // Display this time on the TextLayer
   text_layer_set_text(s_time_layer, buffer);
@@ -129,6 +129,7 @@ static void init() {
 static void deinit() {
     // Destroy Window
     window_destroy(s_main_window);
+		tick_timer_service_unsubscribe();
 }
 
 int main(void) {

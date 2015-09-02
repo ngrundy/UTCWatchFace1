@@ -12,7 +12,6 @@
     "sdkVersion": "3",
     "shortName": "UTCWatchFace1",
     "targetPlatforms": [
-        "aplite",
         "basalt"
     ],
     "uuid": "0ef93253-36b4-4a1a-8088-8bb759e28ddc",
