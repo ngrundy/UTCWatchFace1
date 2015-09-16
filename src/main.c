@@ -7,6 +7,7 @@ static TextLayer *s_date_layer;
 static TextLayer *s_day_layer;
 
 static void main_window_load(Window *window) {
+	//APP_LOG(APP_LOG, "Enter main_window_load");
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_frame(window_layer);
 	
@@ -83,7 +84,7 @@ static void update_time() {
   } else {
     // Use 12 hour format
     strftime(buffer, sizeof("00:00"), "%I:%M", tick_time);
-		strftime(utcbuffer, sizeof("00:00 - 00/00/0000"), "%I:M - %d/%m/%Y", utc_time);
+		strftime(utcbuffer, sizeof("00:00 - 00/00"), "%I:%M - %d/%m", utc_time);
   }
 
 	
@@ -105,9 +106,6 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 
 
 static void init() {
-	// Register with TickTimerService
-	tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
-
 	
   // Create main Window element and assign to pointer
   s_main_window = window_create();
@@ -122,6 +120,10 @@ static void init() {
 	
   // Show the Window on the watch, with animated=true
   window_stack_push(s_main_window, true);
+	
+	// Register with TickTimerService
+	tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+	
 	// update the time
 	update_time();
 }
